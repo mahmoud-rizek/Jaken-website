@@ -10,7 +10,7 @@ company:
 
 
 users:
-    - name
+    - name (first name , last name)
     - username
     - email
     - phone
