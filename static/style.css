@@ -217,9 +217,9 @@ table{
 .signup form{
     text-align: center;
     width: 350px;
-    height: 400px;
+    height: auto;
     background-color: #E6C478;
-    padding-top: 50px;
+    padding: 50px 0;
     border: none;
     border-radius: 30px;
     margin: 80px 0;

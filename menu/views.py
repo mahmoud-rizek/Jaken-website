@@ -1,9 +1,11 @@
 from django.shortcuts import render
-
+from .models import Menu, Albom
 # Create your views here.
 
 def menu(request):
-    return render(request, 'menu/menu.html')
+    menu = Menu.objects.all()
+    return render(request, 'menu/menu.html', {'menu': menu})
 
 def albom(request):
-    return render(request, 'menu/albom.html')
+    albom = Albom.objects.all()
+    return render(request, 'menu/albom.html', {'albom': albom})
