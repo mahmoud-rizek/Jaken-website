@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 
 # Create your models here.
 
@@ -25,6 +28,14 @@ class Users(models.Model):
     phone = models.CharField(_("Phone"), max_length=200)
     city = models.CharField(max_length=20)
 
- 
+
     def __str__(self):
         return str(self.user)
+
+
+
+
+@receiver(post_save, sender=User)
+def create_profile(sender, instance, created, **kwargs):
+    if created:
+        Users.objects.create(user=instance)

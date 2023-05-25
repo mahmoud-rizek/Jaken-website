@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import Company
+from .models import *
 from .forms import SignupForm
+from django.shortcuts import redirect
 # Create your views here.
 
 def company(request):
@@ -32,17 +33,16 @@ def home(request):
 def sign_up(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
-        print("Error is at here, after SignupForm !!!!!!!!!")
         if form.is_valid():
-            print("Error is at here, after is_valid !!!!!!!!!")
             username = form.cleaned_data['username']
-            email = form.cleaned_data['email']
-            phone = form.cleaned_data['phone']
-            city = form.cleaned_data['city']
+            phone = request.POST.get('phonenumber')
+            city = request.POST.get('city')
+
             myform = form.save()
-            # users = Users.objects.get(user__username=username)  
-            # users.active = False
-            # users.save()
+            users = Users.objects.get(user__username=username)  
+            users.phone = phone
+            users.city = city
+            users.save()
             
 
             # # send email
@@ -53,10 +53,9 @@ def sign_up(request):
             #     recipient_list= [email],
             #     fail_silently=False
             # )
-            # return redirect(f"/accounts/{username}/activate")
+            return redirect(f"/accounts/login/")
 
     else:
         form = SignupForm()
-        print("Error is at here, after else condition !!!!!!!!!")
     return render(request, 'registration/signup.html', {"form":form} )
 

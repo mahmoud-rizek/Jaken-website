@@ -209,10 +209,6 @@ table{
     }
   }
 
-
-
-
-
 .signup{
     display: flex;
     justify-content: center;
@@ -221,12 +217,12 @@ table{
 .signup form{
     text-align: center;
     width: 350px;
-    height: 500px;
+    height: 400px;
     background-color: #E6C478;
     padding-top: 50px;
     border: none;
     border-radius: 30px;
-    margin: 200px 0;
+    margin: 80px 0;
 }
 .signup form input{
     width: 300px;
@@ -234,12 +230,42 @@ table{
     margin-top: 20px;
     border-radius: 30px;
     border: none;
+    padding-left: 20px;
+    outline: none;
 }
 ::placeholder{
     padding-left: 20px;
 }
-
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
 .submit{
     background-color: #68484E;
     color: #fff;
+}
+
+table {
+    background-color: #8D9384;
+    width: 500px;
+    font-size: 17px;
+    margin: auto;
+    margin-bottom: 50px;
+    border: 1px solid #fff;
+}
+table tr{
+    padding: 20px 10px;
+}
+table td{
+    color: #fff;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    padding: 20px;
 }
