@@ -1,9 +1,11 @@
 from django.urls import path
-from .views import company, sign_up, activate, login, logout, profile, edit_profile, change_password, reset_password, reset_password_done, reset_password_confirm, reset_password_complete
+from .views import company, sign_up, contact, home
 
 app_name = 'company'
 
 urlpatterns = [ 
-    path('', company, name='company'),
+    path('about/', company, name='about'),
+    path('', home, name='home'),
+    path('contact/', contact, name='company'),
     path('signup/', sign_up, name='signup'),
     ]

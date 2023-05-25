@@ -1,16 +1,31 @@
 from django.shortcuts import render
-from .models import Company, CompanyImages, Users
+from .models import Company
 from .forms import SignupForm
 # Create your views here.
 
 def company(request):
     company = Company.objects.all()
-    company_images = CompanyImages.objects.all()
+
     context = {
         'company':company,
-        'company_images':company_images,
     }
-    return render(request, 'company/company.html', context)
+    return render(request, 'information/about.html', context)
+
+def contact(request):
+    company = Company.objects.all()
+
+    context = {
+        'company':company,
+    }
+    return render(request, 'information/contact.html', context)
+
+def home(request):
+    company = Company.objects.all()
+
+    context = {
+        'company':company,
+    }
+    return render(request, 'information/home.html', context)
 
 
     
@@ -25,9 +40,9 @@ def sign_up(request):
             phone = form.cleaned_data['phone']
             city = form.cleaned_data['city']
             myform = form.save()
-            users = Users.objects.get(user__username=username)  
-            users.active = False
-            users.save()
+            # users = Users.objects.get(user__username=username)  
+            # users.active = False
+            # users.save()
             
 
             # # send email

@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 
 class Company(models.Model):
     name = models.CharField(_("Name"), max_length=200)
+    sub_title = models.CharField(_("Sub titl"), max_length=200)
     description = models.TextField(_("Description"),)
-    city = models.CharField(_("City"), max_length=200)
     address = models.TextField(_("Address") ,max_length=1000)
     phone = models.CharField(_("Phone"), max_length=200)
     email = models.EmailField(_("Email"), max_length=200)
@@ -19,13 +19,6 @@ class Company(models.Model):
  
     def __str__(self):
         return self.name
-    
-class CompanyImages(models.Model):
-    company = models.ForeignKey(Company, verbose_name=_("companyimages"), on_delete=models.CASCADE)
-    image = models.ImageField(_("Images"), upload_to='images')
-
-    def __str__(self):
-        return str(self.company)
     
 class Users(models.Model):
     user = models.OneToOneField(User, verbose_name=_("user"), on_delete=models.CASCADE)

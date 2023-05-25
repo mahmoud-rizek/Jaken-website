@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+    <!-- start menu section -->
+    <section class="menu">
+        <h1 class="text-center">أسعار اللعب</h1>
+        <br />
+        <br />
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+              <img width="400" src="image/Capture9.PNG" alt="" />
+            </div>
+  
+            <div class="col-12 col-md-6 col-lg-4">
+              <img width="400" src="image/Capture10.PNG" alt="" />
+            </div>
+  
+            <div class="col-12 col-md-6 col-lg-4">
+              <img width="400" src="image/Capture11.PNG" alt="" />
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="fillter">
+          <h1 class="text-center">أسعار البار</h1>
+          <br />
+          <br />
+          <div class="wrapper">
+            <div id="buttons">
+              <button class="button-value" onclick="filterProduct('Bottomwear')">
+                DRIP COFFEE
+              </button>
+              <button class="button-value" onclick="filterProduct('Jacket')">
+                COLD COFFEE
+              </button>
+              <button class="button-value" onclick="filterProduct('Watch')">
+                DRINKS
+              </button>
+              <button class="button-value" onclick="filterProduct('Topwear')">
+                HOT COFFEE
+              </button>
+              <button class="button-value" onclick="filterProduct('EXTRAS')">
+                EXTRAS
+              </button>
+              <button class="button-value" onclick="filterProduct('MATCHA')">
+                MATCHA
+              </button>
+              <button class="button-value" onclick="filterProduct('DESSERT')">
+                DESSERT
+              </button>
+              <button class="button-value" onclick="filterProduct('SANDWICHES')">
+                SANDWICHES
+              </button>
+            </div>
+            <div id="products"></div>
+          </div>
+        </div>
+      </section>
+      <!-- end menu section -->
+  
+    {% endblock body %}
