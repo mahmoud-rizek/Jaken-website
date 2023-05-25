@@ -12,7 +12,7 @@ def company(request):
     return render(request, 'information/about.html', context)
 
 def contact(request):
-    company = Company.objects.all()
+    company = Company.objects.last()
 
     context = {
         'company':company,

@@ -20,7 +20,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="image\لوقو جانكن PNG\Copy of Artboard 2-8.png" width="70" alt="">
+                    <img src="{{company.logo.url}}" width="70" alt="">
                 </a>
                 <button style="border: none; outline: none;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
                             <a class="nav-link active" aria-current="page" href="{% url 'company:signup' %}">Sign Up</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{% url '' %}">Log In</a>
+                            <a class="nav-link active" href="{% url 'login' %}">Log In</a>
                         </li>
                     </ul>
                 </div>
@@ -67,16 +67,16 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
                     <ul>
-                        <li>{{context.phone}}</li>
-                        <li>{{context.email}}</li>
-                        <li>{{context.address}}</li>
+                        <li>{{company.phone}}</li>
+                        <li>{{company.email}}</li>
+                        <li>{{company.address}}</li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 footer-links">
                     <a href="menu.html">menu</a>
                     <br>
                     <br>
-                    <a href="login.html">log in</a>
+                    <a href="{% url 'login' %}">log in</a>
                 </div>
             </div>
         </div>
