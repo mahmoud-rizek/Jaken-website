@@ -5,18 +5,20 @@
  <!-- start signup section -->
  <section class="signup">
     <div>
-        <form action="index.html" method="post">
+        <br>
+        <br>
+        <h1 class="text-center">Sign Up</h1>
+        <form method="post">
             {% csrf_token %}
-            <input type="text" name="user-name" placeholder="Enter your username">
+            <input type="text" name="username" placeholder="Enter your user name">
             <br>
-            <input type="email" name="email" placeholder="Enter your email">
+            <input type="number" name="phonenumber" placeholder="Enter your phone number">
             <br>
-            <input type="text" name="phone-number" placeholder="Phone Number">
+            <input type="text" name="city" placeholder="Enter your city">
             <br>
-            
-            <input type="text" name="city" placeholder="City">
+            <input type="password" name="password1" placeholder="Enter your password">
             <br>
-            <input type="password" name="user-pass" placeholder="Enter your password">
+            <input type="password" name="password2" placeholder="Confirm your password">
             <br>
             <input type="submit" class="submit" value="Sign Up">
         </form> 
